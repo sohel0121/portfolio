@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6a82fb;
+            --secondary: #fc5c7d;
+            --accent: #f7971e;
+            --bg: #f8fafc;
+            --card-bg: #fff;
+            --text: #22223b;
+            --footer-bg: #22223b;
+            --footer-text: #f8fafc;
+        }
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, var(--primary) 0%, var(--secondary) 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+        header {
+            background: rgba(255,255,255,0.18);
+            color: #fff;
+            padding: 2.8rem 0 1.7rem 0;
+            text-align: center;
+            box-shadow: 0 4px 24px rgba(106,130,251,0.10);
+            backdrop-filter: blur(6px);
+            position: relative;
+        }
+        header h1 {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 3rem;
+            letter-spacing: 2.5px;
+            margin: 0;
+            font-weight: 700;
+            text-shadow: 0 4px 16px rgba(106,130,251,0.18);
+        }
+        .header-underline {
+            width: 80px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            margin: 1.2rem auto 0 auto;
+            border-radius: 3px;
+        }
+        main {
+            max-width: 900px;
+            margin: 3.5rem auto 5rem auto;
+            background: var(--card-bg);
+            padding: 3rem 3rem 2.5rem 3rem;
+            border-radius: 22px;
+            box-shadow: 0 8px 40px rgba(106,130,251,0.15);
+            color: var(--text);
+            position: relative;
+            z-index: 1;
+        }
+        .card-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            margin-top: 2.5rem;
+        }
+        .card {
+            background: linear-gradient(120deg, #f8fafc 60%, #fceabb 100%);
+            border-radius: 16px;
+            box-shadow: 0 2px 16px rgba(252,92,125,0.07);
+            padding: 2rem 1.5rem;
+            flex: 1 1 260px;
+            min-width: 220px;
+            transition: transform 0.18s, box-shadow 0.18s;
+        }
+        .card:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 8px 32px rgba(252,92,125,0.13);
+        }
+        h2 {
+            color: var(--primary);
+            margin-top: 2rem;
+            margin-bottom: 0.7rem;
+            font-size: 1.6rem;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        ul li {
+            margin-bottom: 0.6rem;
+            font-size: 1.08rem;
+            position: relative;
+            padding-left: 1.5em;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+        ul li::before {
+            content: "🌟";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-size: 1.1em;
+        }
+        p {
+            line-height: 1.8;
+            font-size: 1.12rem;
+            margin-bottom: 1.2rem;
+        }
+        a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        a:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+        .contact-btn {
+            display: inline-block;
+            margin-top: 0.7rem;
+            padding: 0.7rem 1.7rem;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.08rem;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            box-shadow: 0 2px 12px rgba(106,130,251,0.13);
+            transition: background 0.2s, transform 0.15s;
+        }
+        .contact-btn:hover {
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+            transform: scale(1.04);
+        }
+        footer {
+            text-align: center;
+            padding: 1.3rem 0;
+            background: var(--footer-bg);
+            color: var(--footer-text);
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            font-size: 1.05rem;
+            letter-spacing: 1px;
+            box-shadow: 0 -2px 16px rgba(34,34,59,0.09);
+            z-index: 10;
+        }
+        /* Decorative shapes */
+        body::before, body::after {
+            content: "";
+            position: fixed;
+            z-index: 0;
+            border-radius: 50%;
+            opacity: 0.13;
+            pointer-events: none;
+        }
+        body::before {
+            width: 340px;
+            height: 340px;
+            background: var(--primary);
+            top: -90px;
+            left: -90px;
+        }
+        body::after {
+            width: 240px;
+            height: 240px;
+            background: var(--secondary);
+            bottom: -70px;
+            right: -70px;
+        }
+        @media (max-width: 900px) {
+            main {
+                padding: 2rem 1rem 2rem 1rem;
+            }
+            .card-section {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2.1rem;
+            }
+            .header-underline {
+                width: 50px;
+                height: 3px;
+            }
+            main {
+                padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+            }
+            h2 {
+                font-size: 1.15rem;
+            }
+            .card {
+                padding: 1.2rem 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>About Us</h1>
+        <div class="header-underline"></div>
+    </header>
+    <main>
+        <div class="card-section">
+            <div class="card">
+                <h2>Who We Are</h2>
+                <p>
+                    Welcome to our website! We are a passionate team dedicated to providing quality content and services to our users. Our mission is to make information accessible and useful for everyone.
+                </p>
+            </div>
+            <div class="card">
+                <h2>Our Values</h2>
+                <ul>
+                    <li>Integrity and transparency</li>
+                    <li>Customer satisfaction</li>
+                    <li>Continuous improvement</li>
+                    <li>Innovation and creativity</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h2>Contact Us</h2>
+                <p>
+                    Have questions or feedback? Reach out to us at <a href="arsohelrana3@gmail.com">arsohelrana3@gmail.com</a>.
+                </p>
+                <a href="mailto:arsohelrana3@gmail.com" class="contact-btn">Email Us</a>
+
+            </div>
+        </div>
+    </main>
+    <footer>
+        &copy; 2025 Your Company Name. All rights reserved.
+    </footer>
+</body>
+</html>

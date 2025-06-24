@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: linear-gradient(135deg, #232526 0%, #414345 100%);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        h1 {
+            text-align: center;
+            margin: 40px 0 30px 0;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+            color: #ff9800;
+            text-shadow: 0 4px 16px rgba(0,0,0,0.4);
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            padding: 30px 10px 60px 10px;
+        }
+        .movie-card {
+            background: rgba(40,40,50,0.95);
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+            width: 240px;
+            overflow: hidden;
+            text-align: center;
+            position: relative;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .movie-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+        }
+        .movie-card img {
+            width: 100%;
+            height: 340px;
+            object-fit: cover;
+            border-top-left-radius: 18px;
+            border-top-right-radius: 18px;
+            transition: filter 0.3s;
+        }
+        .movie-card:hover img {
+            filter: brightness(1.08) saturate(1.2);
+        }
+        .movie-card h2 {
+            font-size: 1.25em;
+            margin: 14px 0 6px 0;
+            color: #ffb74d;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .movie-card p {
+            font-size: 1em;
+            margin: 0 0 18px 0;
+            color: #bdbdbd;
+            font-weight: 400;
+        }
+        .download-btn {
+            display: inline-block;
+            margin-bottom: 18px;
+            padding: 10px 26px;
+            background: linear-gradient(90deg, #ff9800 0%, #ff5722 100%);
+            color: #fff;
+            border: none;
+            border-radius: 24px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1em;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 8px rgba(255,152,0,0.18);
+            transition: background 0.2s, transform 0.2s;
+            cursor: pointer;
+        }
+        .download-btn:hover {
+            background: linear-gradient(90deg, #ff5722 0%, #ff9800 100%);
+            transform: scale(1.06);
+        }
+        /* Decorative glowing effect */
+        .movie-card::before {
+            content: "";
+            position: absolute;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            border-radius: 20px;
+            background: linear-gradient(120deg, #ff9800 0%, #ff5722 100%);
+            opacity: 0.18;
+            z-index: 0;
+            filter: blur(8px);
+            pointer-events: none;
+        }
+        .movie-card > * {
+            position: relative;
+            z-index: 1;
+        }
+        @media (max-width: 600px) {
+            .gallery {
+                gap: 20px;
+            }
+            .movie-card {
+                width: 90vw;
+                max-width: 320px;
+            }
+            .movie-card img {
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Movie Gallery - Download Your Favorite Movies</h1>
+    <div class="gallery">
+        <div class="movie-card">
+            <img src="/maxresdefault.jpg" alt="Movie 1 Poster">
+            <h2>Movie Title 1</h2>
+            <p>Action, 2025</p>
+            <a class="download-btn" href="/movie/Iron Man 3 (2013) 1080p BluRay x264 ESub [Dual Audio][Hindi 5.1+English 5.1] -mkvC.mkv" download>Download</a>
+        </div>
+        <div class="movie-card">
+            <img src="https://via.placeholder.com/220x320?text=Movie+2" alt="Movie 2 Poster">
+            <h2>Movie Title 2</h2>
+            <p>Comedy, 2022</p>
+            <a class="download-btn" href="movies/movie2.mp4" download>Download</a>
+        </div>
+        <div class="movie-card">
+            <img src="https://via.placeholder.com/220x320?text=Movie+3" alt="Movie 3 Poster">
+            <h2>Movie Title 3</h2>
+            <p>Drama, 2021</p>
+            <a class="download-btn" href="movies/movie3.mp4" download>Download</a>
+        </div>
+        <!-- Add more movie cards as needed -->
+    </div>
+</body>
+</html>

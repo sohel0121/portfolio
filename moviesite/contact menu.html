@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            min-height: 100vh;
+            font-family: 'Roboto', Arial, sans-serif;
+            background: 
+                linear-gradient(135deg, rgba(37,99,235,0.18) 0%, rgba(30,64,175,0.10) 100%),
+                url('web background.jpg') center center/cover no-repeat fixed;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 480px;
+            background: rgba(255,255,255,0.92);
+            margin: 60px auto;
+            padding: 38px 44px 32px 44px;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(60, 72, 88, 0.18);
+            position: relative;
+            backdrop-filter: blur(2px);
+        }
+        .container:before {
+            content: "";
+            position: absolute;
+            top: -38px; left: 50%;
+            transform: translateX(-50%);
+            width: 90px; height: 90px;
+            background: linear-gradient(135deg, #2563eb 60%, #1e40af 100%);
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: 0 2px 16px rgba(37,99,235,0.18);
+        }
+        .icon-envelope {
+            position: absolute;
+            top: -12px; left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            color: #fff;
+            font-size: 44px;
+            background: transparent;
+        }
+        h2 {
+            text-align: center;
+            color: #2563eb;
+            margin-top: 60px;
+            margin-bottom: 18px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-size: 2.1rem;
+        }
+        form label {
+            display: block;
+            margin-top: 18px;
+            color: #374151;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 7px;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 6px;
+            background: #f1f5f9;
+            font-size: 15px;
+            transition: border 0.2s, background 0.2s;
+        }
+        form input:focus, form textarea:focus {
+            border-color: #2563eb;
+            outline: none;
+            background: #fff;
+        }
+        form textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+        form button {
+            margin-top: 28px;
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(90deg, #2563eb 0%, #1e40af 100%);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 17px;
+            font-weight: 700;
+            cursor: pointer;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 8px rgba(37,99,235,0.10);
+            transition: background 0.2s, transform 0.1s;
+        }
+        form button:hover {
+            background: linear-gradient(90deg, #1e40af 0%, #2563eb 100%);
+            transform: translateY(-2px) scale(1.02);
+        }
+        .contact-info {
+            margin-top: 36px;
+            text-align: center;
+            color: #64748b;
+            font-size: 15.5px;
+        }
+        .contact-info p {
+            margin: 8px 0;
+        }
+        .contact-info i {
+            color: #2563eb;
+            margin-right: 7px;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 28px 10px 24px 10px;
+            }
+            h2 {
+                margin-top: 54px;
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <i class="fa-solid fa-envelope icon-envelope"></i>
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+        </form>
+        <div class="contact-info">
+            <p><i class="fa-solid fa-envelope"></i> arsohelrana3@gmail.com</p>
+            <p><i class="fa-solid fa-phone"></i> +1 234 567 890</p>
+            <p><i class="fa-solid fa-location-dot"></i>Sahjalal Avenue, Uttara Model Town, Bangladesh</p>
+        </div>
+    </div>
+</body>
+</html>
